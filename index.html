@@ -368,8 +368,15 @@
     }
 
     @keyframes chevronBounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
     }
 
     .hero-eyebrow {
@@ -1099,6 +1106,235 @@
         border-bottom: none;
       }
     }
+
+    /* ── MENU / WEDDING BREAKFAST ── */
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
+
+    @media (max-width: 900px) {
+      .menu-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+    }
+
+    .menu-card {
+      background: var(--card);
+      backdrop-filter: blur(18px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 36px 28px;
+      box-shadow: 0 6px 36px var(--shadow);
+      text-align: center;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose-deep), var(--peach-light), var(--rose-deep));
+      border-radius: 16px 16px 0 0;
+    }
+
+    .menu-card-title {
+      font-family: 'Maryellen', cursive;
+      font-size: clamp(24px, 4.5vw, 32px);
+      color: var(--rose-deep);
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+    }
+
+    .menu-item-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .menu-item {
+      border-bottom: 1px dashed rgba(230, 103, 83, 0.15);
+      padding-bottom: 16px;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .menu-item-title {
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      font-size: 14.5px;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .menu-item-desc {
+      font-family: 'Longa Iberica', serif;
+      font-style: italic;
+      font-size: 13.5px;
+      color: var(--ink-mid);
+      line-height: 1.55;
+    }
+
+    .menu-item-label {
+      display: inline-block;
+      font-size: 9px;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: var(--blush);
+      color: var(--rose-deep);
+      margin-top: 6px;
+    }
+
+    /* ── DYNAMIC GUEST CARDS ── */
+    .guest-card {
+      background: rgba(255, 255, 255, 0.45);
+      border: 1px solid rgba(230, 103, 83, 0.18);
+      border-radius: 12px;
+      padding: 22px;
+      margin-bottom: 20px;
+      position: relative;
+      animation: fadeIn 0.4s ease;
+    }
+
+    .guest-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(230, 103, 83, 0.12);
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
+
+    .guest-card-title {
+      font-family: 'Maryellen', cursive;
+      font-size: clamp(19px, 3.5vw, 23px);
+      color: var(--rose-deep);
+      margin: 0;
+    }
+
+    .guest-remove-btn {
+      background: transparent;
+      border: none;
+      color: var(--ink-light);
+      cursor: pointer;
+      font-size: 10px;
+      font-family: 'Jost', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .guest-remove-btn:hover {
+      color: var(--rose);
+    }
+
+    .guest-remove-btn svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      fill: none;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 480px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    .course-selects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .course-selects {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+
+    .guest-card select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23B74634' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 18px;
+      padding-right: 30px !important;
+    }
+
+    .add-guest-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border: 1px solid var(--rose);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--rose);
+      font-family: 'Jost', sans-serif;
+      font-size: 10px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin-bottom: 20px;
+    }
+
+    .add-guest-btn:hover {
+      background: var(--rose);
+      color: white;
+    }
+
+    .child-menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      text-align: left;
+    }
+
+    @media (max-width: 600px) {
+      .child-menu-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -1146,7 +1382,8 @@
           <span class="hero-name">Kelle</span>
         </div>
         <div class="hero-details-card">
-          <div style="border-top: 1px solid rgba(255, 200, 160, 0.3); padding-top: clamp(12px, 2vh, 20px); margin-bottom: clamp(12px, 2vh, 20px);">
+          <div
+            style="border-top: 1px solid rgba(255, 200, 160, 0.3); padding-top: clamp(12px, 2vh, 20px); margin-bottom: clamp(12px, 2vh, 20px);">
             <p
               style="font-family: 'Longa Iberica', serif; font-style: italic; font-size: clamp(18px, 4vw, 24px); color: rgba(255, 245, 235, 0.96); margin: 0; text-shadow: 0 1px 6px rgba(0,0,0,0.3); letter-spacing: 0.05em;">
               Saturday, 26th September 2026
@@ -1230,7 +1467,7 @@
               <div class="tl-title">Cocktails &amp; Photos</div>
             </div>
             <div class="tl-desc">Drinks, canapés, and photographs with family and
-                friends.</div>
+              friends.</div>
           </div>
         </div>
         <div class="tl-item" data-delay="300">
@@ -1327,20 +1564,23 @@
         <div class="venue-name">Ringwood Hall</div>
         <div class="venue-addr">Brimington Road, Chesterfield, S43 1DQ, United Kingdom</div>
         <iframe class="map-embed"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.5624747861123!2d-1.3824188039977554!3d53.258540117808074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48799b1f210338a5%3A0x1dece77aeac60a65!2sRingwood%20Hall%20Hotel%20%26%20Spa!5e0!3m2!1sen!2s!4v1783506918698!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.5624747861123!2d-1.3824188039977554!3d53.258540117808074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48799b1f210338a5%3A0x1dece77aeac60a65!2sRingwood%20Hall%20Hotel%20%26%20Spa!5e0!3m2!1sen!2s!4v1783506918698!5m2!1sen!2s"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <img src="sda.PNG" alt="Ringwood Hall Venue" class="venue-img" />
         <div class="btn-row">
-          <a href="https://www.google.com/maps/search/Ringwood+Hall+Brimington+Road+Chesterfield"
-            target="_blank" class="btn btn-sm">
+          <a href="https://www.google.com/maps/search/Ringwood+Hall+Brimington+Road+Chesterfield" target="_blank"
+            class="btn btn-sm">
             Get Directions
           </a>
-          <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NG04ZnQyOGZtaTcwaHQ5cmhlYWtrZmtvMDkgZmFtaWx5MTU4NDA5MTg1NTE3OTY2Mjk2MTBAZw&tmsrc=family15840918551796629610%40group.calendar.google.com" target="_blank" class="btn btn-sm btn-gold">
+          <a href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NG04ZnQyOGZtaTcwaHQ5cmhlYWtrZmtvMDkgZmFtaWx5MTU4NDA5MTg1NTE3OTY2Mjk2MTBAZw&tmsrc=family15840918551796629610%40group.calendar.google.com"
+            target="_blank" class="btn btn-sm btn-gold">
             Add to Calendar
           </a>
         </div>
-       
+
       </div>
     </section>
 
@@ -1392,7 +1632,7 @@
         <img src="gift.png" alt="Gift" class="gift-img" />
         <p class="gift-text">
           Gifts are entirely optional, should you wish to give a gift, cash gifts are warmly
-            welcomed however, any gift will be gratefully received
+          welcomed however, any gift will be gratefully received
         </p>
       </div>
     </section>
@@ -1406,6 +1646,8 @@
         </svg>
       </div>
     </div>
+
+
 
     <!-- ── RSVP ── -->
     <section id="rsvp" class="sec">
@@ -1421,31 +1663,62 @@
         style="max-width: 500px; margin: 0 auto; text-align: left; position: relative;">
         <!-- RSVP Form -->
         <form id="rsvpForm" onsubmit="handleRsvpSubmit(event)">
+          <!-- Personalized Greeting Callout -->
+          <div id="personalizedInvite"
+            style="font-family:'Longa Iberica',serif; font-style:italic; font-size: 16px; color: var(--rose-deep); text-align: center; margin-bottom: 26px; line-height: 1.65; border-bottom: 1px dashed var(--peach-light); padding-bottom: 20px;">
+            You and your family are invited to Jason &amp; Kelle’s wedding. Can you confirm who in your family will be
+            attending and their meal choices?
+          </div>
+
           <div class="form-group">
             <label class="form-label" for="rsvpName">
-              Full Name
+              Contact Name
             </label>
-            <input type="text" id="rsvpName" name="name" class="form-input" required placeholder="e.g. John Doe" />
+            <input type="text" id="rsvpName" name="contact_name" class="form-input" required
+              placeholder="e.g. John Doe" />
           </div>
 
           <div class="form-group">
             <label class="form-label" for="rsvpEmail">
               Email Address
             </label>
-            <input type="email" id="rsvpEmail" name="email" class="form-input" required
+            <input type="email" id="rsvpEmail" name="contact_email" class="form-input" required
               placeholder="e.g. john@example.com" />
+          </div>
+
+          <!-- Dynamic Guest List Container -->
+          <div class="form-group" style="margin-top: 30px;">
+            <label class="form-label">
+              Household Guests Attending
+            </label>
+            <div class="form-helper" style="margin-bottom: 15px;">
+              Please complete one entry below for each member of your family who will be attending.
+            </div>
+            <div id="guestListContainer">
+              <!-- Guest Cards will be dynamically inserted here by JavaScript -->
+            </div>
+
+            <div style="text-align: center;">
+              <button type="button" class="add-guest-btn" onclick="addNewGuest()">
+                <svg viewBox="0 0 24 24" stroke="var(--rose)" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width: 12px; height: 12px;">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                </svg>
+                Add Guest
+              </button>
+            </div>
           </div>
 
           <div class="form-group">
             <label class="form-label" for="rsvpMessage">
-              Message
+              Dietary Requirements / Comments
             </label>
             <div class="form-helper">
-              Please let us know who will be attending, including the full names of all guests in
-                your party, and kindly inform us of any dietary requirements or allergies.
+              Please inform us of any dietary requirements, allergies, or other notes for any of your guests.
             </div>
-            <textarea id="rsvpMessage" name="message" class="form-textarea" required rows="4"
-              placeholder="Your message..."></textarea>
+            <textarea id="rsvpMessage" name="message" class="form-textarea" rows="4"
+              placeholder="e.g. Gluten-free for Alice, high chair for baby, etc. (Optional)"></textarea>
           </div>
 
           <button type="submit" class="btn btn-fill"
@@ -1472,7 +1745,7 @@
         </div>
 
         <!-- Contact Email Info -->
-     
+
       </div>
     </section>
 
@@ -1487,6 +1760,11 @@
         <span
           style="font-family:'Jost',sans-serif;font-weight:200;font-size:10px;letter-spacing:0.4em;color:var(--ink-light);text-transform:uppercase;">26
           September 2026</span>
+        <div
+          style="margin-top: 24px; opacity: 0.35; font-size: 8.5px; font-family:'Jost',sans-serif; letter-spacing:0.12em; text-transform:uppercase;">
+          Made with love by <a href="https://instagram.com/weddingbyawf" target="_blank"
+            style="color: inherit; text-decoration: none; border-bottom: 1px dotted rgba(48, 34, 45, 0.3);">@weddingbyawf</a>
+        </div>
       </div>
 
     </footer>
@@ -1495,11 +1773,101 @@
 
   <script>
     // ── RSVP CONFIGURATION ──
-    const RSVP_EMAIL = "[INSERT EMAIL ADDRESS]";
+    const RSVP_EMAIL = "kellee@esclimited.co.uk";
     const RSVP_CC = "ranasaad988@gmail.com";
 
-    // Inject RSVP contact email into the DOM dynamically
+    // Guest management state
+    let guestCounter = 0;
+
+    // Define menu options for Adult & Child dropdown populations
+    const ADULT_STARTERS = [
+      { value: "Soup with a warm bread roll (Cream of Vegetable)", label: "Soup (Cream of Vegetable)" },
+      { value: "Soup with a warm bread roll (Potato & Leek)", label: "Soup (Potato & Leek)" },
+      { value: "Soup with a warm bread roll (Tomato & Basil)", label: "Soup (Tomato & Basil)" },
+      { value: "Soup with a warm bread roll (Broccoli & Stilton (V))", label: "Soup (Broccoli & Stilton (V))" },
+      { value: "Chicken & Black Pudding Terrine, Tomato Chutney & Brioche", label: "Chicken & Black Pudding Terrine" },
+      { value: "Baked Goats Cheese, Basil, Tomato Bruschetta & Rocket (V – Vegan Adaptable)", label: "Baked Goats Cheese (V)" },
+      { value: "Traditional Prawn Cocktail, Marie Rose Sauce, Pickled Cucumber & Buttered Brown Bread", label: "Traditional Prawn Cocktail" },
+      { value: "Butternut Squash & Red Pepper Pâté with Toasted Ciabatta (V, VG)", label: "Butternut Squash & Red Pepper Pâté (V, VG)" },
+      { value: "Tomato, Thyme & Feta Tart with Balsamic & Endive (V – Vegan Adaptable)", label: "Tomato, Thyme & Feta Tart (V)" },
+      { value: "Wild Mushroom, Garlic & Basil Gratin with a Warm Bread Roll (V)", label: "Wild Mushroom Gratin (V)" },
+      { value: "Cajun Spiced Halloumi Fries with Sweet Chilli Sauce (V)", label: "Cajun Halloumi Fries (V)" }
+    ];
+
+    const ADULT_MAINS = [
+      { value: "Roast Chicken with Stuffing, Bacon Roll, Yorkshire Pudding & Roast Gravy", label: "Roast Chicken with Stuffing" },
+      { value: "Mozzarella & Caramelised Onion Tart, Red Pepper Sauce & Roasted Potatoes (V – Vegan Adaptable)", label: "Mozzarella & Onion Tart (V)" },
+      { value: "Rosemary Rubbed Sirloin of Beef with Yorkshire Pudding, Roast Potatoes & Red Wine Thyme Sauce", label: "Rosemary Sirloin of Beef" },
+      { value: "Roast Pork Loin with Crackling, Apple Stuffing, Dripping Roast Potatoes & Sage & Brandy Sauce", label: "Roast Pork Loin with Crackling" },
+      { value: "Salmon Steak with Chive Crushed New Potatoes & Fennel Cream Sauce", label: "Salmon Steak" },
+      { value: "Pork Tenderloin with Roasted New Potatoes, Green Vegetable Medley & Mustard Cream Sauce", label: "Pork Tenderloin" },
+      { value: "Spinach, Pine Nut & Ricotta Stuffed Courgette with Red Pepper Couscous (V – Vegan Adaptable)", label: "Stuffed Courgette (V)" },
+      { value: "Warm Wild Mushroom Tart with Rocket, Tomato, Spring Onion & Radish Salad, Finished with Truffle Oil (V – Vegan Adaptable)", label: "Warm Wild Mushroom Tart (V)" },
+      { value: "Caramelised Red Onion Filo Tart & Fondue (V)", label: "Caramelised Red Onion Filo Tart (V)" }
+    ];
+
+    const ADULT_DESSERTS = [
+      { value: "Sticky Toffee Pudding with Vanilla Custard (V)", label: "Sticky Toffee Pudding (V)" },
+      { value: "Baked New York Cheesecake with Blackberry Coulis", label: "Baked New York Cheesecake" },
+      { value: "Warm Cherry Bakewell Tart with Custard (V)", label: "Warm Cherry Bakewell Tart (V)" },
+      { value: "Dark Chocolate Brownie with Salted Caramel Sauce & Vanilla Cream", label: "Dark Chocolate Brownie" },
+      { value: "Lemon Meringue Cheesecake (V)", label: "Lemon Meringue Cheesecake (V)" },
+      { value: "Warm Cherry Pie with Vanilla Ice Cream (V)", label: "Warm Cherry Pie (V)" },
+      { value: "Giant Profiterole with Vanilla Cream & Milk Chocolate Sauce", label: "Giant Profiterole" }
+    ];
+
+    const CHILD_STARTERS = [
+      { value: "Cheesy garlic bread (v)", label: "Cheesy Garlic Bread (V)" },
+      { value: "Cucumber, pepper, carrots and celery sticks with cream cheese dip(v) vegan adaptable", label: "Veggie Sticks & Cream Cheese (V, VG-Adaptable)" },
+      { value: "Nachos with cheese sauce (v)", label: "Nachos with Cheese Sauce (V)" },
+      { value: "Filled potato skins with cheese (v) vegan adaptable", label: "Potato Skins with Cheese (V, VG-Adaptable)" }
+    ];
+
+    const CHILD_MAINS = [
+      { value: "Grilled sausages served with cheesy mash and beans (vegetarian sausages available)", label: "Grilled Sausages, Cheesy Mash & Beans" },
+      { value: "Grilled chicken fillets with fries and baked beans", label: "Grilled Chicken Fillets, Fries & Beans" },
+      { value: "Pasta Bolognese with toasted garlic bread (vegetarian option available)", label: "Pasta Bolognese & Garlic Bread" },
+      { value: "Margarita pizza with fries (v)", label: "Margarita Pizza & Fries (V)" }
+    ];
+
+    const CHILD_DESSERTS = [
+      { value: "Vanilla Ice Cream Sundae (v)", label: "Vanilla Ice Cream Sundae (V)" },
+      { value: "Warm cookie served with ice cream (v)", label: "Warm Cookie & Ice Cream (V)" },
+      { value: "Fresh Fruit Platter (v) (vg)", label: "Fresh Fruit Platter (V, VG)" }
+    ];
+
+    // Helper to populate select options dynamically
+    function populateSelect(selectEl, options, placeholder) {
+      selectEl.innerHTML = `<option value="" disabled selected>${placeholder}</option>`;
+      options.forEach(opt => {
+        const option = document.createElement("option");
+        option.value = opt.value;
+        option.textContent = opt.label;
+        selectEl.appendChild(option);
+      });
+    }
+
+    // Toggle dropdown options when guest checkbox is toggled
+    function toggleGuestMenu(checkbox, id) {
+      const isChild = checkbox.checked;
+      const starterSelect = document.getElementById(`guestStarter_${id}`);
+      const mainSelect = document.getElementById(`guestMain_${id}`);
+      const dessertSelect = document.getElementById(`guestDessert_${id}`);
+
+      if (isChild) {
+        populateSelect(starterSelect, CHILD_STARTERS, "Choose a Child Starter");
+        populateSelect(mainSelect, CHILD_MAINS, "Choose a Child Main");
+        populateSelect(dessertSelect, CHILD_DESSERTS, "Choose a Child Dessert");
+      } else {
+        populateSelect(starterSelect, ADULT_STARTERS, "Choose a Starter");
+        populateSelect(mainSelect, ADULT_MAINS, "Choose a Main Course");
+        populateSelect(dessertSelect, ADULT_DESSERTS, "Choose a Dessert");
+      }
+    }
+
+    // Inject RSVP contact email into the DOM dynamically, personalize greeting from URL, load first guest card
     document.addEventListener("DOMContentLoaded", () => {
+      // 1. Email links setup
       const emailLinks = document.querySelectorAll("#rsvpContactEmailLink");
       emailLinks.forEach(link => {
         if (link) {
@@ -1507,7 +1875,110 @@
           link.textContent = RSVP_EMAIL;
         }
       });
+
+      // 2. Personalize greeting from URL parameters (?name=Mr%20and%20Mrs%20Adams)
+      const urlParams = new URLSearchParams(window.location.search);
+      const nameParam = urlParams.get('name') || urlParams.get('invite') || '';
+      const inviteMsgEl = document.getElementById("personalizedInvite");
+      if (inviteMsgEl) {
+        if (nameParam) {
+          inviteMsgEl.innerHTML = `<strong>${nameParam}</strong>, you and your family are invited to Jason &amp; Kelle’s wedding. Can you confirm who in your family will be attending and their meal choices?`;
+        } else {
+          inviteMsgEl.innerHTML = `You and your family are invited to Jason &amp; Kelle’s wedding. Can you confirm who in your family will be attending and their meal choices?`;
+        }
+      }
+
+      // 3. Add the first guest card automatically on load
+      addNewGuest();
     });
+
+    function addNewGuest() {
+      guestCounter++;
+      const container = document.getElementById("guestListContainer");
+
+      const guestCard = document.createElement("div");
+      guestCard.className = "guest-card";
+      guestCard.id = `guestCard_${guestCounter}`;
+
+      guestCard.innerHTML = `
+        <div class="guest-card-header">
+          <h4 class="guest-card-title">Guest #${guestCounter}</h4>
+          <button type="button" class="guest-remove-btn" onclick="removeGuest(${guestCounter})">
+            <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3 6 5 6 21 6"></polyline>
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            </svg>
+            Remove
+          </button>
+        </div>
+        
+        <div class="form-row">
+          <div>
+            <label class="form-label" for="guestName_${guestCounter}">Guest's Name</label>
+            <input type="text" id="guestName_${guestCounter}" class="form-input guest-name" required placeholder="e.g. Alice Smith" />
+          </div>
+          <div>
+            <label class="form-label" style="display: flex; align-items: center; gap: 8px; margin-top: 28px; cursor: pointer; user-select: none;">
+              <input type="checkbox" id="guestIsChild_${guestCounter}" class="guest-age-checkbox" onchange="toggleGuestMenu(this, ${guestCounter})" style="width: 18px; height: 18px; accent-color: var(--rose); cursor: pointer;" />
+              Check if Child
+            </label>
+          </div>
+        </div>
+
+        <div class="course-selects">
+          <div>
+            <label class="form-label" for="guestStarter_${guestCounter}">Starter Selection</label>
+            <select id="guestStarter_${guestCounter}" class="form-input guest-starter" required></select>
+          </div>
+          
+          <div>
+            <label class="form-label" for="guestMain_${guestCounter}">Main Course Selection</label>
+            <select id="guestMain_${guestCounter}" class="form-input guest-main" required></select>
+          </div>
+
+          <div>
+            <label class="form-label" for="guestDessert_${guestCounter}">Dessert Selection</label>
+            <select id="guestDessert_${guestCounter}" class="form-input guest-dessert" required></select>
+          </div>
+        </div>
+      `;
+      container.appendChild(guestCard);
+
+      // Populate selects with Adult options initially
+      const starterSelect = guestCard.querySelector(".guest-starter");
+      const mainSelect = guestCard.querySelector(".guest-main");
+      const dessertSelect = guestCard.querySelector(".guest-dessert");
+      populateSelect(starterSelect, ADULT_STARTERS, "Choose a Starter");
+      populateSelect(mainSelect, ADULT_MAINS, "Choose a Main Course");
+      populateSelect(dessertSelect, ADULT_DESSERTS, "Choose a Dessert");
+
+      updateGuestHeaders();
+    }
+
+    function removeGuest(id) {
+      const card = document.getElementById(`guestCard_${id}`);
+      if (card) {
+        card.remove();
+        updateGuestHeaders();
+      }
+    }
+
+    function updateGuestHeaders() {
+      const cards = document.querySelectorAll("#guestListContainer .guest-card");
+      cards.forEach((card, index) => {
+        const title = card.querySelector(".guest-card-title");
+        title.textContent = `Guest #${index + 1}`;
+
+        const removeBtn = card.querySelector(".guest-remove-btn");
+        if (removeBtn) {
+          if (cards.length === 1) {
+            removeBtn.style.display = "none";
+          } else {
+            removeBtn.style.display = "flex";
+          }
+        }
+      });
+    }
 
     // ── SPLASH ──
     document.body.classList.add('splash-active');
@@ -1583,16 +2054,59 @@
       const submitBtn = form.querySelector('button[type="submit"]');
       const successDiv = document.getElementById('rsvpSuccess');
 
-      const name = document.getElementById('rsvpName').value;
-      const email = document.getElementById('rsvpEmail').value;
-      const message = document.getElementById('rsvpMessage').value;
+      const contactName = document.getElementById('rsvpName').value;
+      const contactEmail = document.getElementById('rsvpEmail').value;
+      const comments = document.getElementById('rsvpMessage').value;
+
+      const guestCards = document.querySelectorAll("#guestListContainer .guest-card");
+      if (guestCards.length === 0) {
+        alert("Please add at least one guest.");
+        return;
+      }
 
       // Disable submit button and show loading text
       submitBtn.disabled = true;
       const originalHtml = submitBtn.innerHTML;
       submitBtn.innerHTML = 'Sending...';
 
-      const subject = `New RSVP Response from ${name}`;
+      const subject = `New RSVP Response from ${contactName}`;
+
+      let guestSummaryText = "";
+      const emailPayload = {
+        _subject: subject,
+        _cc: RSVP_CC,
+        "Contact Name": contactName,
+        "Contact Email": contactEmail,
+        "Total Guests": guestCards.length
+      };
+
+      guestCards.forEach((card, index) => {
+        const guestName = card.querySelector(".guest-name").value;
+        const isChild = card.querySelector(".guest-age-checkbox").checked;
+        const guestAge = isChild ? "Child" : "Adult";
+        const guestStarter = card.querySelector(".guest-starter").value;
+        const guestMain = card.querySelector(".guest-main").value;
+        const guestDessert = card.querySelector(".guest-dessert").value;
+
+        // Add to direct keys
+        emailPayload[`Guest_${index + 1}_Name`] = guestName;
+        emailPayload[`Guest_${index + 1}_Type`] = guestAge;
+        emailPayload[`Guest_${index + 1}_Starter`] = guestStarter;
+        emailPayload[`Guest_${index + 1}_Main`] = guestMain;
+        emailPayload[`Guest_${index + 1}_Dessert`] = guestDessert;
+
+        // Add to readable summary block
+        guestSummaryText += `Guest #${index + 1}: ${guestName} (${guestAge})\n`;
+        guestSummaryText += ` - Starter: ${guestStarter}\n`;
+        guestSummaryText += ` - Main: ${guestMain}\n`;
+        guestSummaryText += ` - Dessert: ${guestDessert}\n\n`;
+      });
+
+      if (comments.trim() !== "") {
+        emailPayload["Dietary & Comments"] = comments;
+      }
+
+      emailPayload["Full Guest List & Selection Details"] = guestSummaryText;
 
       fetch(`https://formsubmit.co/ajax/${RSVP_EMAIL}`, {
         method: "POST",
@@ -1600,13 +2114,7 @@
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
-        body: JSON.stringify({
-          _subject: subject,
-          _cc: RSVP_CC,
-          "Full Name": name,
-          "Email Address": email,
-          "Message": message
-        })
+        body: JSON.stringify(emailPayload)
       })
         .then(response => {
           if (response.ok) {
