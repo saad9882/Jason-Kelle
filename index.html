@@ -12,23 +12,23 @@
     rel="stylesheet" />
   <style>
     :root {
-      --rose: #E66753;
-      --rose-deep: #B74634;
-      --rose-pale: #F7C2B9;
-      --peach: #F19675;
-      --peach-light: #F7C4B2;
-      --peach-pale: #FDF1EC;
-      --orange: #E66753;
-      --gold: #FAC265;
+      --rose: #DB6A72;
+      --rose-deep: #A33F44;
+      --rose-pale: #FAC5C0;
+      --peach: #E9978F;
+      --peach-light: #F9C1B5;
+      --peach-pale: #FFF2EE;
+      --orange: #DB6A72;
+      --gold: #E5B25D;
       --gold-light: #FCE1AB;
-      --blush: #FFF4DC;
-      --cream: #FFFBF0;
+      --blush: #FDEBE7;
+      --cream: #FAF7F5;
       --ink: #30222D;
       --ink-mid: #54404E;
       --ink-light: #7B6675;
-      --white: #fffdfa;
-      --card: rgba(255, 253, 248, 0.96);
-      --card-border: rgba(230, 103, 83, 0.18);
+      --white: #fffdfd;
+      --card: rgba(255, 254, 253, 0.97);
+      --card-border: rgba(219, 106, 114, 0.18);
       --shadow: rgba(48, 34, 45, 0.08);
     }
 
@@ -176,7 +176,7 @@
     #main {
       min-height: 100vh;
       position: relative;
-      background: linear-gradient(180deg, #FFFBF0 0%, #FFF4DC 25%, #FDF1EC 55%, #F7C4B2 100%);
+      background: linear-gradient(180deg, #FFFBF9 0%, #FDEAE6 30%, #FAD7D2 65%, #ECC0BA 100%);
     }
 
     #main::before {
@@ -184,9 +184,9 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(ellipse 140% 50% at 50% 0%, rgba(250, 194, 101, 0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 70% 40% at 90% 35%, rgba(230, 103, 83, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 70% 40% at 10% 70%, rgba(241, 150, 117, 0.08) 0%, transparent 50%);
+        radial-gradient(ellipse 140% 50% at 50% 0%, rgba(253, 218, 215, 0.2) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 40% at 90% 35%, rgba(244, 180, 185, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse 70% 40% at 10% 70%, rgba(247, 196, 178, 0.12) 0%, transparent 50%);
       pointer-events: none;
       z-index: 0;
     }
@@ -385,7 +385,7 @@
       font-size: 10px;
       letter-spacing: 0.55em;
       text-transform: uppercase;
-      color: rgba(255, 220, 180, 0.88);
+      color: rgba(255, 225, 220, 0.9);
       margin-bottom: 22px;
       opacity: 0;
       animation: fadeUp 1s 0.2s ease forwards;
@@ -406,15 +406,15 @@
       display: block;
       width: 48px;
       height: 1px;
-      background: linear-gradient(to right, transparent, rgba(255, 200, 160, 0.6));
+      background: linear-gradient(to right, transparent, rgba(255, 215, 210, 0.6));
     }
 
     .hero-divider span:last-child {
-      background: linear-gradient(to left, transparent, rgba(255, 200, 160, 0.6));
+      background: linear-gradient(to left, transparent, rgba(255, 215, 210, 0.6));
     }
 
     .hero-divider i {
-      color: rgba(255, 200, 160, 0.75);
+      color: rgba(255, 215, 210, 0.75);
       font-style: normal;
       font-size: 11px;
     }
@@ -455,7 +455,7 @@
     .hero-amp {
       font-family: 'Maryellen', cursive;
       font-size: clamp(40px, 8vw, 76px);
-      color: rgba(255, 210, 150, 0.95);
+      color: rgba(255, 225, 220, 0.95);
       line-height: 1.1;
       display: inline-block;
       margin: 0 4px;
@@ -466,7 +466,7 @@
       font-family: 'Longa Iberica', serif;
       font-style: italic;
       font-size: clamp(15px, 3.6vw, 19px);
-      color: rgba(255, 230, 210, 0.82);
+      color: rgba(255, 235, 230, 0.85);
       margin-bottom: 38px;
       opacity: 0;
       animation: fadeUp 1s 0.95s ease forwards;
@@ -487,7 +487,7 @@
     .hero-detail-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      border-top: 1px solid rgba(255, 200, 160, 0.3);
+      border-top: 1px solid rgba(255, 215, 210, 0.3);
       padding-top: 20px;
     }
 
@@ -504,7 +504,7 @@
       top: 10%;
       height: 80%;
       width: 1px;
-      background: rgba(255, 200, 160, 0.25);
+      background: rgba(255, 215, 210, 0.25);
     }
 
     .hd-label {
@@ -513,7 +513,7 @@
       font-size: 9px;
       letter-spacing: 0.45em;
       text-transform: uppercase;
-      color: rgba(255, 210, 160, 0.75);
+      color: rgba(255, 225, 220, 0.75);
       margin-bottom: 7px;
     }
 
@@ -528,7 +528,7 @@
 
     .hero-card-tag {
       padding: 14px 24px;
-      border-top: 1px solid rgba(255, 200, 160, 0.25);
+      border-top: 1px solid rgba(255, 215, 210, 0.25);
       font-family: 'Longa Iberica', serif;
       font-style: italic;
       font-size: clamp(16px, 3.8vw, 20px);
@@ -1290,7 +1290,7 @@
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-      background-image: url("data:image/svg+xml;utf8,<svg fill='%23B74634' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%23A33F44' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
       background-repeat: no-repeat;
       background-position: right 10px center;
       background-size: 18px;
@@ -1383,7 +1383,7 @@
         </div>
         <div class="hero-details-card">
           <div
-            style="border-top: 1px solid rgba(255, 200, 160, 0.3); padding-top: clamp(12px, 2vh, 20px); margin-bottom: clamp(12px, 2vh, 20px);">
+            style="border-top: 1px solid rgba(255, 215, 210, 0.3); padding-top: clamp(12px, 2vh, 20px); margin-bottom: clamp(12px, 2vh, 20px);">
             <p
               style="font-family: 'Longa Iberica', serif; font-style: italic; font-size: clamp(18px, 4vw, 24px); color: rgba(255, 245, 235, 0.96); margin: 0; text-shadow: 0 1px 6px rgba(0,0,0,0.3); letter-spacing: 0.05em;">
               Saturday, 26th September 2026
